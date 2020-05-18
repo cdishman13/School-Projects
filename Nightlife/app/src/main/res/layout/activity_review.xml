@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bfefff">
+
+
+    <TextView
+        android:id="@+id/place_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textColor="#0000ff"
+        android:textSize="60dp" />
+
+    <EditText
+        android:id="@+id/place_notes"
+        android:layout_width="match_parent"
+        android:layout_height="580dp"
+        android:ems="10"
+        android:hint="Notes"
+        android:inputType="textMultiLine"
+        android:textColor="#0000ff"
+        android:textSize="30dp"
+        android:background="@android:color/transparent"/>
+
+</LinearLayout>

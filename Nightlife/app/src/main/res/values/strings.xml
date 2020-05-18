@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Nightlife</string>
+    <string name="title_activity_maps">Nightlife</string>
+    <string name="login_activity">LOGIN</string>
+    <string name="new_user">CREATE USER</string>
+    <string name="title_activity_review">Review</string>
+</resources>

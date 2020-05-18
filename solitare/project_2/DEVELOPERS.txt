@@ -1,0 +1,98 @@
+Global Variables:
+char fclub: Keeps track of the club foundation
+char fdiamond: Keeps track of the diamond foundation
+char fheart: Keeps track of the heart foundation
+char fspade: Keeps track of the spade foundation
+struct table T: Keeps track of the columns
+struct stockcards s: Keeps track of stock cards
+struct wastecards w: Keeps track of waste cards
+int turns: Keeps track of the turns
+int limit: Keeps track of the amount of times you an reset the stock
+int moves: Keeps track of them amount of moves
+int line: Keeps track of the line we are reading in from
+
+int compareword(int size, char* str, FILE* inf)
+	This fuction compares the next string in the file to the string 'str' of size 'size'.
+
+int validcard(int c)
+	This fuction checks to make sure that the card number is valid
+
+int validatecolumn(char *p, char *c)
+	This function checks if the current card can be put with previous card
+
+char convert(char c)
+	This function converts the letter cards with different characters so they 
+	can more easily be compared in the function validatecolumn
+
+void consumeWS(FILE* inf)
+	This function gets rid of all white space and finds the next character
+
+void initTableCol(int i, int c, int index)
+	This function initializes the global struct T
+
+void getSrcCards(int k, char cards[], char move[])
+	This function gets cards for the source from the tableau to move to dest
+
+void getCards(int i, char cards[])
+	This function gets cards to compare to make sure the move is valid
+
+void addToCol(int i, char cards[])
+	This function adds cards to a column
+
+void movepipe(char cards[])
+	This function moves the '|' character for when a card is uncovered
+
+void deleteFromCol(int k, int len)
+	This function deletes cards from a column
+
+void printBoardDebug()
+	This function prints the board out and is used for debug
+
+char* printHelp(int index, char col[], int c[], int k)
+	This function helps the function printBoard. It returns the cards needed 
+	to be printed
+
+void printBoard()
+	This function prints the board as a human readable output
+
+int rulecheck(FILE* inf)
+	This function checks the RULES: section
+	It checks the amount of turns, should be 1 or 3
+	It checks for "unlimited" or "limit N" where N is a number from 0-9
+
+int foundationcheck(FILE* inf)
+	This function checks the FOUNDATION: section
+	This section checks the foundations 
+	The foundations are in the order clubs, diamonds, hearts, then spades
+	Checks if the number is valid, then checks the suit
+
+int tablecheck(FILE* inf, int *cov)
+	This function checks the TABLEAU: section
+	This sections checks seven columns
+	Each column has covered and uncovered parts. Covered | Uncovered
+	This function will count the number of covered cards
+
+int stockcheck(FILE* inf, int *st, int *wa)
+	This function checks the STOCK: section
+	This function checks the waste and stock cards
+	The waste and stock cards are seperated by '|'
+	This function counts the number of stock and waste cards
+
+int movecheck(FILE* inf)
+	This function checks the MOVES: section. Checks to see if all moves are valid
+	Moves can either be '.', 'r', or src->dest
+
+int main(int argc, char **argv)
+	In the main function the program reads in the text input file
+	To parse the text file, first get rid of any comments and white space before the RULES: section
+	Then we use the function rulecheck to check the rule section
+	Then we get rid of any whitespace until the FOUNDATION: section
+	Then we use the function foundationcheck to check the foundation section
+	Then we get rid of any whitespace until the TABLEAU: section
+	Then we use the function tablecheck to check the tableau section
+	Then we get rid of any whitespace until the STOCK: section
+	Then we use the function stockcheck to check the stock section
+	Then we get rid of whitespace until the MOVES: section
+	Then we use the functino movecheck to check the moves section
+	Then the function prints the output
+	Then the function ends

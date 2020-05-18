@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bfefff">
+
+
+    <TextView
+        android:id="@+id/nightlife"
+        android:layout_width="match_parent"
+        android:layout_height="214dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Nightlife"
+        android:textColor="#0000ff"
+        android:textSize="100dp"
+        android:fontFamily="cursive"/>
+
+    <TextView
+        android:id="@+id/user_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/password_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="loginButtonClicked"
+            android:outlineAmbientShadowColor="#000000FF"
+            android:text="@string/login_activity"
+            android:fontFamily="cursive"
+            android:textColor="#0000ff" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="newUserButtonClicked"
+            android:text="Create User"
+            android:fontFamily="cursive"
+            android:textColor="#0000ff" />
+    </LinearLayout>
+
+</LinearLayout>
